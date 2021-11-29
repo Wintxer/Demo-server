@@ -1,1 +1,1 @@
-web: uvicorn demo-server.main:app
+web: uvicorn --port $PORT demo-server.main:app
