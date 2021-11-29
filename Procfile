@@ -1,1 +1,1 @@
-web: uvicorn demo-server.main:app --workers 4
+web: uvicorn demo-server.main:app
