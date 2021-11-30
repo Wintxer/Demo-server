@@ -1,0 +1,60 @@
+.login {
+    width: 20%;
+    min-height: 40vh;
+    background-color: #7f888b;
+    border-radius: 10%;
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6); 
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.login_title {
+    color: white;
+    font-size: 1.5rem;
+}
+.login_input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: none;
+    background: none;
+    margin: 5% 0;
+    width: 70%;
+    background-color: #e4e4e4;
+    border-radius: 35px;
+    padding: 5%;
+    display: block;
+    -webkit-box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5) inset; 
+    box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5) inset;
+}
+.login_input:focus {
+    background-color: #cfcfcf;
+    -webkit-box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.5) inset; 
+    box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.5) inset;
+}
+
+.login_submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: none;
+    background: none;
+    margin: 2% 0;
+    background-color: #e4e4e4;
+    border-radius: 35px;
+    font-size: 1rem;
+    display: block;
+    transition: background-color .5s ease;
+    width: 20%;
+    padding: 3% 1%;
+}
+.login_submit:hover {
+    background-color: #cfcfcf;
+    cursor: pointer;
+}

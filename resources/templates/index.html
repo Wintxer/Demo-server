@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/LoginView/loginView.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/ExecuteView/executeView.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="login">Connexion</a></li>
+                <li><a href="signup">Inscription</a></li>
+                <li><a href="user">Mon compte</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+        {% if path == 'login' %}
+        {% include 'LoginView/login.html' %}
+        {% elif path == 'signup' %}
+        {% include 'LoginView/signup.html' %}
+        {% elif path == 'home' %}
+        {% include 'ExecuteView/execute.html' %}
+        {% elif path == 'user' %}
+        {% include 'accountView/account.html' %}
+        {% endif %}
+    </div>
+    <footer class="footer">
+
+    </footer>
+</body>
+</html>
