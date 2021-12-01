@@ -1,0 +1,38 @@
+.account {
+    width: 60%;
+    height: 60vh;
+    background-color: #7f888b;
+    border-radius: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu {
+    width: 30%;
+    height: 100%;
+    border-right: solid 2px #aaaaaa;
+}
+.menu ul li {
+    width: 75%;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #505658;
+    background-color: white;
+    padding: 4%;
+    margin: 10% 0;
+    transition: all .5s ease;
+    border-radius: 35px;
+    text-align: center;
+}
+
+.menu ul li:hover {
+    background-color: #cfcfcf;
+    cursor: pointer;
+}
+
+.accountview {
+    width: 70%;
+    height: 100%;
+}

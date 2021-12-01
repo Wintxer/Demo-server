@@ -3,10 +3,12 @@
     height: 8vh;
     border-radius: 35px;
     background-color: #7f888b;
+    -webkit-box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6); 
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.6);
 }
 .url_form {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
 }
@@ -20,6 +22,7 @@
     border: none;
     background: none;
     margin: 0;
+    margin-left: 1%;
     width: 80%;
     background-color: #e4e4e4;
     border-radius: 35px;
@@ -28,8 +31,80 @@
     -webkit-box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5) inset; 
     box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5) inset;
 }
+
 .url_input:focus {
     background-color: #cfcfcf;
     -webkit-box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.5) inset; 
     box-shadow: 10px 10px 20px -10px rgba(0,0,0,0.5) inset;
+}
+
+.url_select {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+.url_select i {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    width: 10px;
+    height: 10px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.url_select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: none;
+    background: none;
+    margin: 2% 0;
+    background-color: #e4e4e4;
+    border-radius: 35px;
+    font-size: 1rem;
+    display: block;
+    padding: 12% 2%;
+    padding-left: 25%;
+    width: 100px;
+    transition: background-color .5s ease;
+}
+
+.url_select select:hover {
+    cursor: pointer;
+    background-color: #cfcfcf;
+}
+
+.url_select select:focus {
+    background-color: #cfcfcf;
+}
+
+.url_submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: none;
+    background: none;
+    margin: 2% 0;
+    margin-right: 2%;
+    background-color: #e4e4e4;
+    border-radius: 35px;
+    font-size: 1rem;
+    display: block;
+    transition: background-color .5s ease;
+    padding: .9% 1%;
+}
+
+.url_submit:hover {
+    background-color: #cfcfcf;
+    cursor: pointer;
 }

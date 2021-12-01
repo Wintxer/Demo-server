@@ -16,9 +16,10 @@ def create_routes(app, templates):
     # def read_item(item_id: int, q: Optional[str] = None):
     #     return {"item_id": item_id, "q": q}
 
-    @app.get("/exec/{url}")
-    def read_exec():
-        return
+    @app.get("/execute", response_class=HTMLResponse)
+    def read_exec(request: Request, url: str, site: str):
+        print(url + " " + site);
+        return templates.TemplateResponse("index.html", {"request": request, "path": "home"})
 
     @app.get("/login", response_class=HTMLResponse)
     def read_login(request: Request):
