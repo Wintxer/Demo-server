@@ -32,6 +32,7 @@
         {% include 'LoginView/signup.html' %}
         {% elif path == 'home' %}
         {% include 'ExecuteView/execute.html' %}
+        {{ user }}
         {% elif path == 'user' %}
         {% include 'accountView/account.html' %}
         {% endif %}

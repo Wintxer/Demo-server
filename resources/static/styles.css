@@ -51,7 +51,7 @@ body {
     flex-grow: 1;
 }
 .header nav ul div:last-child {
-    width: 25%;
+    min-width: 30%;
     justify-content: space-evenly;
 }
 .header nav ul li {
