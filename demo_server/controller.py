@@ -1,11 +1,11 @@
 # routes
 import logging
 from fastapi.responses import HTMLResponse
-from fastapi import Request, Depends, HTTPException
+from fastapi import Request, Depends, HTTPException, Form
 from sqlalchemy.orm import Session
 
-from demo_server import model
 from demo_server.database import SessionLocal
+from demo_server.model import User, UserDTO, UserCreate, RaffleDTO, RaffleCreate, Raffle
 
 logger = logging.getLogger(__name__)
 
@@ -27,9 +27,12 @@ def create_routes(app, templates):
     # def read_item(item_id: int, q: Optional[str] = None):
     #     return {"item_id": item_id, "q": q}
 
-    @app.get("/execute", response_class=HTMLResponse)
-    def read_exec(request: Request, url: str, site: str):
-        print(url + " " + site);
+    @app.get("/execute", response_model=RaffleDTO, response_class=HTMLResponse)
+    def read_exec(request: Request, url: str = Form(...), site: str = Form(...), db: Session = Depends(get_db)):
+        raffle = RaffleCreate(url_raffle=url)
+        db_new_raffle = Raffle(url=url)
+        db.add(db_new_raffle)
+        db.commit()
         return templates.TemplateResponse("index.html", {"request": request, "path": "home"})
 
     @app.get("/login", response_class=HTMLResponse)
@@ -44,12 +47,10 @@ def create_routes(app, templates):
     def read_user(request: Request):
         return templates.TemplateResponse("index.html", {"request": request, "path": "user"})
 
-    @app.post("/signup/", response_model=model.UserDTO, response_class=HTMLResponse)
-    def create(request: Request, user: model.UserCreate, db: Session = Depends(get_db)):
-        db_user = model.User(name=user.name).to_dto()
-        if db_user:
-            raise HTTPException(status_code=400, detail="Name already registered")
-        db_new_user = model.User(name=user.name, password=user.password)
+    @app.post("/login/", response_model=UserDTO, response_class=HTMLResponse)
+    def create(request: Request, name: str = Form(...), password: str = Form(...), db: Session = Depends(get_db)):
+        user = UserCreate(name=name, password=password)
+        db_new_user = User(name=user.name, password=user.password)
         db.add(db_new_user)
         db.commit()
         db.refresh(db_new_user)

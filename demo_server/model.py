@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
 from pydantic import BaseModel
@@ -7,7 +7,7 @@ from demo_server.database import Base
 
 class UserBase(BaseModel):
     name: str
-    profile_picture: str
+    profile_picture: Optional[str]
 
 
 class UserCreate(UserBase):

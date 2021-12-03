@@ -1,4 +1,7 @@
 import logging
+
+import uvicorn
+
 from demo_server import model
 from demo_server.controller import create_routes
 from fastapi import FastAPI
@@ -21,3 +24,6 @@ app.mount("/static", StaticFiles(directory="resources/static"), name="static")
 templates = Jinja2Templates(directory="resources/templates")
 
 create_routes(app, templates)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
