@@ -1,8 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
+import os
 
-engine = create_engine('postgresql://alexis:motdepasse@localhost:5432/demo_database', echo=True)
+DATABASE_URL = os.environ['DATABASE_URL']
+
+engine = create_engine(DATABASE_URL, echo=True)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
