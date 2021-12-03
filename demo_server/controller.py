@@ -4,18 +4,10 @@ from fastapi.responses import HTMLResponse
 from fastapi import Request, Depends, HTTPException, Form
 from sqlalchemy.orm import Session
 
-from demo_server.database import SessionLocal
+from demo_server.database import get_db
 from demo_server.model import User, UserDTO, UserCreate, RaffleDTO, RaffleCreate, Raffle
 
 logger = logging.getLogger(__name__)
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 def create_routes(app, templates):
