@@ -55,6 +55,7 @@ class SiteDTO(SiteBase):
 
 class RaffleBase(BaseModel):
     url_raffle: str
+    status: int
 
 
 class RaffleCreate(RaffleBase):
@@ -132,6 +133,7 @@ class Raffle(Base):
     id_site = Column(Integer, ForeignKey('site.id'), primary_key=True)
     id_user = Column(Integer, ForeignKey('user.id'), primary_key=True)
     url_raffle = Column(String)
+    status = Column(Integer)
     users = relationship("User")
     sites = relationship("Site")
 
@@ -140,6 +142,7 @@ class Raffle(Base):
             id_site=self.id_site,
             id_user=self.id_user,
             url_raffle=self.url_raffle,
+            status=self.status,
             users=[user.to_dto() for user in self.users],
             sites=[site.to_dto() for site in self.sites]
         )

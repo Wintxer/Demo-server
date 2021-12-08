@@ -1,17 +1,28 @@
 <div class="account">
     <div class="menu">
         <ul>
-            <li>Profil</li>
-            <li>Configuration</li>
+            <li onclick="Profile()" >Profil</li>
+            <li onclick="Config()">Configuration</li>
         </ul>
     </div>
     <div class="accountview">
         <div class="profile">
-            Identifiant : {name}
+            <h2>Identifiant :</h2>
+            <p>{{ user.name }}</p>
         </div>
-        <div class="dataform">
-            <form action="user/settings/" method="GET">
-                <label for="url_google_sheet">Données :</label>
+        <div class="dataform open">
+            <form class="gsheet_form" action="user/settings/" method="GET">
+                <label for="url_google_sheet">Site 1 :</label>
+                <input type="url" name="url_google_sheet" id="data">
+                <input type="submit" value="Valider">
+            </form>
+            <form class="gsheet_form" action="user/settings/" method="GET">
+                <label for="url_google_sheet">Site 2 :</label>
+                <input type="url" name="url_google_sheet" id="data">
+                <input type="submit" value="Valider">
+            </form>
+            <form class="gsheet_form" action="user/settings/" method="GET">
+                <label for="url_google_sheet">Site 3 :</label>
                 <input type="url" name="url_google_sheet" id="data">
                 <input type="submit" value="Valider">
             </form>

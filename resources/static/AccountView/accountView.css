@@ -35,4 +35,44 @@
 .accountview {
     width: 70%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile {
+    width: 50%;
+    height: 10%;
+    background-color: white;
+    border-radius: 35px;
+    padding: 4%;
+    color: #505658;
+    display: none;
+}
+
+.profile h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+.profile p {
+    display: inline-block;
+    margin-left: 5%;
+    font-size: 1.2rem;
+}
+
+.dataform {
+    width: 50%;
+    background-color: white;
+    border-radius: 35px;
+    padding: 4%;
+    color: #505658;
+    display: none;
+}
+
+.gsheet_form {
+    margin: 10% 0;
+}
+.open {
+    display: block;
 }

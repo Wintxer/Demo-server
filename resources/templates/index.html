@@ -34,12 +34,22 @@
         {% include 'ExecuteView/execute.html' %}
         {% elif path == 'user' %}
         {% include 'accountView/account.html' %}
-        {{ user.name }}
         {% endif %}
     </div>
     <footer class="footer">
         Footer
     </footer>
     <script src="https://kit.fontawesome.com/db96f42e32.js" crossorigin="anonymous"></script>
+    <script>
+        function Profile() {
+            document.querySelector(".profile").classList.add('open')
+            document.querySelector(".dataform").classList.remove('open')
+        }
+
+        function Config() {
+            document.querySelector(".profile").classList.remove('open')
+            document.querySelector(".dataform").classList.add('open')
+        }
+    </script>
 </body>
 </html>
